@@ -6,6 +6,7 @@ import React from "react";
 import { AuroraBackground } from "./ui/aurora-background";
 import { HeroParallax } from "./ui/hero-parallax";
 import LogoLoop from "./LogoLoop";
+import Image from "next/image";
 import {
   SiReact,
   SiNextdotjs,
@@ -21,6 +22,7 @@ import {
   SiVscodium,
   SiCss3,
 } from "react-icons/si";
+import Link from "next/link";
 
 const projects = [
   {
@@ -97,14 +99,12 @@ export const products = [
   {
     title: "Journify",
     link: "https://kenomi.eu",
-    thumbnail:
-      "/jounifyWebsite.jpg",
+    thumbnail: "/jounifyWebsite.jpg",
   },
   {
     title: "Kenomi Agency",
     link: "https://kenomi-com.vercel.app",
-    thumbnail:
-      "/kenomiCom.jpg",
+    thumbnail: "/kenomiCom.jpg",
   },
   {
     title: "Kenomi",
@@ -114,14 +114,12 @@ export const products = [
   {
     title: "Journify",
     link: "https://kenomi.eu",
-    thumbnail:
-      "/jounifyWebsite.jpg",
+    thumbnail: "/jounifyWebsite.jpg",
   },
   {
     title: "Kenomi Agency",
     link: "https://kenomi-com.vercel.app",
-    thumbnail:
-      "/kenomiCom.jpg",
+    thumbnail: "/kenomiCom.jpg",
   },
   {
     title: "Kenomi",
@@ -131,14 +129,12 @@ export const products = [
   {
     title: "Journify",
     link: "https://kenomi.eu",
-    thumbnail:
-      "/jounifyWebsite.jpg",
+    thumbnail: "/jounifyWebsite.jpg",
   },
   {
     title: "Kenomi Agency",
     link: "https://kenomi-com.vercel.app",
-    thumbnail:
-      "/kenomiCom.jpg",
+    thumbnail: "/kenomiCom.jpg",
   },
   {
     title: "Kenomi",
@@ -148,14 +144,12 @@ export const products = [
   {
     title: "Journify",
     link: "https://kenomi.eu",
-    thumbnail:
-      "/jounifyWebsite.jpg",
+    thumbnail: "/jounifyWebsite.jpg",
   },
   {
     title: "Kenomi Agency",
     link: "https://kenomi-com.vercel.app",
-    thumbnail:
-      "/kenomiCom.jpg",
+    thumbnail: "/kenomiCom.jpg",
   },
   {
     title: "Kenomi",
@@ -165,17 +159,13 @@ export const products = [
   {
     title: "Journify",
     link: "https://kenomi.eu",
-    thumbnail:
-      "/jounifyWebsite.jpg",
+    thumbnail: "/jounifyWebsite.jpg",
   },
   {
     title: "Kenomi Agency",
     link: "https://kenomi-com.vercel.app",
-    thumbnail:
-      "/kenomiCom.jpg",
+    thumbnail: "/kenomiCom.jpg",
   },
-
-
 ];
 
 const techLogos = [
@@ -268,10 +258,18 @@ export default function Portfolio() {
             <div className="flex items-center justify-between py-6">
               <motion.a
                 href="#"
-                className="text-xl text-white font-bold tracking-tight"
+                className="flex items-center text-xl text-white font-bold tracking-tight"
                 whileHover={{ scale: 1.05 }}
               >
-                by Kenji Mobutu
+                by&nbsp;
+                <Image
+                  src="/noBgWhite.png"
+                  alt="Session de formation à la cybersécurité en PME"
+                  width={125}
+                  height={100}
+                  priority
+                  className="ml-2"
+                />
               </motion.a>
               <div className="hidden md:flex gap-8 text-sm text-white font-medium">
                 <motion.a
@@ -514,6 +512,21 @@ export default function Portfolio() {
                   Kenji Mobutu
                 </span>
               </motion.a>
+              <Link
+                href="https://kenomi.eu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-lg group"
+              >
+                <Image
+                  src="/noBgWhite.png"
+                  alt="Session de formation à la cybersécurité en PME"
+                  width={225}
+                  height={200}
+                  priority
+                  className="ml-2"
+                />
+              </Link>
             </motion.div>
           </div>
 
