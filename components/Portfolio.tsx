@@ -92,96 +92,90 @@ export const products = [
   {
     title: "Kenomi",
     link: "https://kenomi.eu",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+    thumbnail: "/kenomiWebsite.jpg",
   },
   {
-    title: "Cursor",
+    title: "Journify",
     link: "https://kenomi.eu",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+      "/jounifyWebsite.jpg",
   },
   {
-    title: "Rogue",
+    title: "Kenomi Agency",
+    link: "https://kenomi-com.vercel.app",
+    thumbnail:
+      "/kenomiCom.jpg",
+  },
+  {
+    title: "Kenomi",
+    link: "https://kenomi.eu",
+    thumbnail: "/kenomiWebsite.jpg",
+  },
+  {
+    title: "Journify",
     link: "https://kenomi.eu",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
+      "/jounifyWebsite.jpg",
+  },
+  {
+    title: "Kenomi Agency",
+    link: "https://kenomi-com.vercel.app",
+    thumbnail:
+      "/kenomiCom.jpg",
+  },
+  {
+    title: "Kenomi",
+    link: "https://kenomi.eu",
+    thumbnail: "/kenomiWebsite.jpg",
+  },
+  {
+    title: "Journify",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "/jounifyWebsite.jpg",
+  },
+  {
+    title: "Kenomi Agency",
+    link: "https://kenomi-com.vercel.app",
+    thumbnail:
+      "/kenomiCom.jpg",
+  },
+  {
+    title: "Kenomi",
+    link: "https://kenomi.eu",
+    thumbnail: "/kenomiWebsite.jpg",
+  },
+  {
+    title: "Journify",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "/jounifyWebsite.jpg",
+  },
+  {
+    title: "Kenomi Agency",
+    link: "https://kenomi-com.vercel.app",
+    thumbnail:
+      "/kenomiCom.jpg",
+  },
+  {
+    title: "Kenomi",
+    link: "https://kenomi.eu",
+    thumbnail: "/kenomiWebsite.jpg",
+  },
+  {
+    title: "Journify",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "/jounifyWebsite.jpg",
+  },
+  {
+    title: "Kenomi Agency",
+    link: "https://kenomi-com.vercel.app",
+    thumbnail:
+      "/kenomiCom.jpg",
   },
 
-  {
-    title: "Editorially",
-    link: "https://kenomi.eu",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
-  },
-  {
-    title: "Editrix AI",
-    link: "https://kenomi.eu",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
-  },
-  {
-    title: "Pixel Perfect",
-    link: "https://kenomi.eu",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
-  },
 
-  {
-    title: "Algochurn",
-    link: "https://kenomi.eu",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
-  },
-  {
-    title: "Aceternity UI",
-    link: "https://kenomi.eu",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
-  },
-  {
-    title: "Tailwind Master Kit",
-    link: "https://kenomi.eu",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
-  },
-  {
-    title: "SmartBridge",
-    link: "https://kenomi.eu",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
-  },
-  {
-    title: "Renderwork Studio",
-    link: "https://kenomi.eu",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
-  },
-
-  {
-    title: "Creme Digital",
-    link: "https://kenomi.eu",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
-  },
-  {
-    title: "Golden Bells Academy",
-    link: "https://kenomi.eu",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
-  },
-  {
-    title: "Invoker Labs",
-    link: "https://kenomi.eu",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
-  },
-  {
-    title: "E Free Invoice",
-    link: "https://kenomi.eu",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
-  },
 ];
 
 const techLogos = [
@@ -404,8 +398,8 @@ export default function Portfolio() {
               className="space-y-6 text-lg text-white/60 leading-relaxed"
             >
               <p>
-                En tant que Webpreneur, je considère que la maîtrise
-                des technologies n’a de valeur que lorsqu’elle contribue à la
+                En tant que Webpreneur, je considère que la maîtrise des
+                technologies n’a de valeur que lorsqu’elle contribue à la
                 création d’un produit concret ou d’une solution utile. Sans
                 finalité, la technique ne reste qu’un bel exercice… dénué
                 d’élégance fonctionnelle.
