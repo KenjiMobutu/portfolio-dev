@@ -340,8 +340,10 @@ export default function Portfolio() {
                   transition={{ delay: 0.5, duration: 0.8 }}
                   className="text-xl md:text-2xl text-white/60 max-w-2xl leading-relaxed"
                 >
-                  Full Stack Developer passionné par la conception produit et la
-                  création d&apos;expériences web exceptionnelles
+                  Webpreneur, Développeur Full Stack.
+                  <br />
+                  Passionné par la conception produit et la création
+                  d&apos;expériences web exceptionnelles
                 </motion.p>
               </div>
 
@@ -387,7 +389,7 @@ export default function Portfolio() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-sm uppercase tracking-wider text-white/40 mb-6">
-                À propos
+                Ma vision
               </h2>
               <h3 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
                 Créer des solutions digitales innovantes
@@ -402,7 +404,7 @@ export default function Portfolio() {
               className="space-y-6 text-lg text-white/60 leading-relaxed"
             >
               <p>
-                En tant que Développeur Full Stack, je considère que la maîtrise
+                En tant que Webpreneur, je considère que la maîtrise
                 des technologies n’a de valeur que lorsqu’elle contribue à la
                 création d’un produit concret ou d’une solution utile. Sans
                 finalité, la technique ne reste qu’un bel exercice… dénué
