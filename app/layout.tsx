@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
         className={`${poppins.variable} ${quicksand.variable} antialiased font-sans`}
         style={{ fontFamily: 'var(--font-quicksand), var(--font-poppins), sans-serif' }}

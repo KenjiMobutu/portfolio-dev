@@ -1,57 +1,81 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
-
-
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import React from "react";
+import { AuroraBackground } from "./ui/aurora-background";
+import { HeroParallax } from "./ui/hero-parallax";
+import LogoLoop from "./LogoLoop";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiGithub,
+  SiHtml5,
+  SiNodedotjs,
+  SiMongodb,
+  SiPython,
+  SiSharp,
+  SiMacos,
+  SiVscodium,
+  SiCss3,
+} from "react-icons/si";
 
 const projects = [
   {
     id: 1,
     title: "E-Commerce Platform",
-    description: "Plateforme de commerce complète avec gestion de paiements et inventaire en temps réel",
+    description:
+      "Plateforme de commerce complète avec gestion de paiements et inventaire en temps réel",
     tech: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
     year: "2024",
-    details: "Développement d'une plateforme e-commerce complète avec système de paiement sécurisé Stripe, gestion d'inventaire en temps réel, tableau de bord administrateur, et système de recommandations basé sur l'IA.",
+    details:
+      "Développement d'une plateforme e-commerce complète avec système de paiement sécurisé Stripe, gestion d'inventaire en temps réel, tableau de bord administrateur, et système de recommandations basé sur l'IA.",
     achievements: [
       "Augmentation de 45% du taux de conversion",
       "Temps de chargement < 1.5s",
       "99.9% de disponibilité",
-      "Support de 3 devises"
-    ]
+      "Support de 3 devises",
+    ],
   },
   {
     id: 2,
     title: "Analytics Dashboard",
-    description: "Tableau de bord analytique avec visualisations de données interactives",
+    description:
+      "Tableau de bord analytique avec visualisations de données interactives",
     tech: ["React", "D3.js", "Node.js", "MongoDB"],
     year: "2024",
-    details: "Création d'un tableau de bord analytique en temps réel avec visualisations de données complexes utilisant D3.js.",
+    details:
+      "Création d'un tableau de bord analytique en temps réel avec visualisations de données complexes utilisant D3.js.",
     achievements: [
       "Traitement de 5M+ data points",
       "Mise à jour en temps réel",
       "Exports PDF/Excel automatisés",
-      "Interface responsive complète"
-    ]
+      "Interface responsive complète",
+    ],
   },
   {
     id: 3,
     title: "Mobile Banking App",
-    description: "Application bancaire mobile sécurisée avec authentification biométrique",
+    description:
+      "Application bancaire mobile sécurisée avec authentification biométrique",
     tech: ["React Native", "Node.js", "AWS", "PostgreSQL"],
     year: "2023",
-    details: "Développement d'une application bancaire mobile hautement sécurisée avec authentification biométrique.",
+    details:
+      "Développement d'une application bancaire mobile hautement sécurisée avec authentification biométrique.",
     achievements: [
       "50,000+ utilisateurs actifs",
       "Certification PCI DSS",
       "Authentification biométrique",
-      "Support iOS et Android"
-    ]
+      "Support iOS et Android",
+    ],
   },
   {
     id: 4,
     title: "AI Content Tool",
-    description: "Outil de génération de contenu alimenté par l'IA pour le marketing",
+    description:
+      "Outil de génération de contenu alimenté par l'IA pour le marketing",
     tech: ["Python", "OpenAI", "FastAPI", "Redis"],
     year: "2023",
     details: "Plateforme de génération de contenu marketing utilisant GPT-4.",
@@ -59,142 +83,295 @@ const projects = [
       "Génération de 1000+ contenus/jour",
       "Réduction de 70% du temps de création",
       "Score SEO moyen de 85/100",
-      "API REST documentée"
-    ]
-  }
-]
+      "API REST documentée",
+    ],
+  },
+];
 
-const skills = [
-  'React', 'Next.js', 'TypeScript', 'Node.js', 'Python',
-  'PostgreSQL', 'MongoDB', 'GraphQL', 'Docker', 'AWS',
-  'Tailwind CSS', 'Git', 'CI/CD', 'Vercel', 'Vue.js'
-]
+export const products = [
+  {
+    title: "Kenomi",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+  },
+  {
+    title: "Cursor",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+  },
+  {
+    title: "Rogue",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
+  },
+
+  {
+    title: "Editorially",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+  },
+  {
+    title: "Editrix AI",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
+  },
+  {
+    title: "Pixel Perfect",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
+  },
+
+  {
+    title: "Algochurn",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+  },
+  {
+    title: "Aceternity UI",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+  },
+  {
+    title: "Tailwind Master Kit",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+  },
+  {
+    title: "SmartBridge",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+  },
+  {
+    title: "Renderwork Studio",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+  },
+
+  {
+    title: "Creme Digital",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+  },
+  {
+    title: "Golden Bells Academy",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+  },
+  {
+    title: "Invoker Labs",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+  },
+  {
+    title: "E Free Invoice",
+    link: "https://kenomi.eu",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+  },
+];
+
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  {
+    node: <SiTypescript />,
+    title: "TypeScript",
+    href: "https://www.typescriptlang.org",
+  },
+  {
+    node: <SiTailwindcss />,
+    title: "Tailwind CSS",
+    href: "https://tailwindcss.com",
+  },
+  { node: <SiGithub />, title: "GitHub", href: "https://github.com" },
+  {
+    node: <SiHtml5 />,
+    title: "HTML5",
+    href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  },
+  { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
+  { node: <SiMongodb />, title: "MongoDB", href: "https://www.mongodb.com" },
+  { node: <SiPython />, title: "Python", href: "https://www.python.org" },
+  {
+    node: <SiSharp />,
+    title: "C#",
+    href: "https://learn.microsoft.com/en-us/dotnet/csharp/",
+  },
+  { node: <SiMacos />, title: "macOS", href: "https://www.apple.com/macos/" },
+  {
+    node: <SiVscodium />,
+    title: "VS Code",
+    href: "https://code.visualstudio.com",
+  },
+  {
+    node: <SiCss3 />,
+    title: "CSS3",
+    href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  },
+];
+
+// // Alternative with image sources
+// const imageLogos = [
+//   {
+//     src: "/logos/company1.png",
+//     alt: "Company 1",
+//     href: "https://company1.com",
+//   },
+//   {
+//     src: "/logos/company2.png",
+//     alt: "Company 2",
+//     href: "https://company2.com",
+//   },
+//   {
+//     src: "/logos/company3.png",
+//     alt: "Company 3",
+//     href: "https://company3.com",
+//   },
+// ];
 
 export default function Portfolio() {
-  const [selectedProject, setSelectedProject] = useState<number | null>(null)
-  const [scrolled, setScrolled] = useState(false)
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-black text-white relative">
       {/* Background 3D avec gradient fabric */}
 
-
-      {/* Navigation fixe - Style Portfolite */}
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'bg-black/80 backdrop-blur-xl border-b border-white/10' : 'bg-transparent'
-        }`}
-      >
-        <div className="portfolio-container">
-          <div className="flex items-center justify-between py-6">
-            <motion.a
-              href="#"
-              className="text-xl font-bold tracking-tight"
-              whileHover={{ scale: 1.05 }}
-            >
-              KM
-            </motion.a>
-            <div className="hidden md:flex gap-8 text-sm font-medium">
+      <AuroraBackground>
+        {/* Navigation fixe - Style Portfolite */}
+        <motion.nav
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+            scrolled
+              ? "bg-black/80 backdrop-blur-xl border-b border-white/10"
+              : "bg-transparent"
+          }`}
+        >
+          <div className="portfolio-container">
+            <div className="flex items-center justify-between py-6">
               <motion.a
-                href="#about"
-                whileHover={{ color: '#d4af37' }}
-                className="transition-colors"
+                href="#"
+                className="text-xl text-white font-bold tracking-tight"
+                whileHover={{ scale: 1.05 }}
               >
-                À propos
+                by Kenji Mobutu
               </motion.a>
-              <motion.a
-                href="#projects"
-                whileHover={{ color: '#d4af37' }}
-                className="transition-colors"
-              >
-                Projets
-              </motion.a>
-              <motion.a
-                href="#contact"
-                whileHover={{ color: '#d4af37' }}
-                className="transition-colors"
-              >
-                Contact
-              </motion.a>
+              <div className="hidden md:flex gap-8 text-sm text-white font-medium">
+                <motion.a
+                  href="#about"
+                  whileHover={{ color: "#d4af37" }}
+                  className="transition-colors"
+                >
+                  À propos
+                </motion.a>
+                <motion.a
+                  href="#projects"
+                  whileHover={{ color: "#d4af37" }}
+                  className="transition-colors"
+                >
+                  Projets
+                </motion.a>
+                <motion.a
+                  href="#contact"
+                  whileHover={{ color: "#d4af37" }}
+                  className="transition-colors"
+                >
+                  Contact
+                </motion.a>
+              </div>
             </div>
           </div>
-        </div>
-      </motion.nav>
+        </motion.nav>
 
-      {/* Hero Section - Style Portfolite */}
-      <section className="min-h-screen flex items-center relative overflow-hidden pt-24">
-        <div className="portfolio-container w-full py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="space-y-8"
-          >
+        {/* Hero Section - Style Portfolite */}
+        <section className="min-h-screen flex items-center relative overflow-hidden pt-24">
+          <div className="portfolio-container w-full py-20">
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="inline-block px-4 py-1.5 border border-white/10 rounded-full text-sm text-white/60"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="space-y-8"
             >
-              Disponible pour des projets
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                className="inline-block px-4 py-1.5 border border-white/10 rounded-full text-sm text-white/60"
+              >
+                Disponible pour des projets
+              </motion.div>
+
+              <div className="space-y-6">
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                  className="text-5xl md:text-7xl lg:text-8xl text-white font-bold leading-[1.1] tracking-tight"
+                >
+                  Kenji Mobutu
+                </motion.h1>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                  className="text-xl md:text-2xl text-white/60 max-w-2xl leading-relaxed"
+                >
+                  Full Stack Developer passionné par la conception produit et la
+                  création d&apos;expériences web exceptionnelles
+                </motion.p>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.7, duration: 0.8 }}
+                className="flex flex-wrap gap-4 pt-4"
+              >
+                <motion.a
+                  href="#contact"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 text-white font-medium  hover:text-white/90 transition-colors"
+                >
+                  Me contacter
+                </motion.a>
+                <motion.a
+                  href="#projects"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="mx-auto py-3 border border-white/40 text-white font-medium rounded-full hover:border-white/40 transition-colors px-6 priority"
+                >
+                  Voir mes projets
+                </motion.a>
+              </motion.div>
             </motion.div>
-
-            <div className="space-y-6">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight"
-              >
-                Kenji Mobutu
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                className="text-xl md:text-2xl text-white/60 max-w-2xl leading-relaxed"
-              >
-                Full Stack Developer passionné par la création d&apos;expériences web exceptionnelles
-              </motion.p>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7, duration: 0.8 }}
-              className="flex flex-wrap gap-4 pt-4"
-            >
-              <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 text-white font-medium  hover:text-white/90 transition-colors"
-              >
-                Me contacter
-              </motion.a>
-              <motion.a
-                href="#projects"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mx-auto py-3 border border-white/40 font-medium rounded-full hover:border-white/40 transition-colors px-6 priority"
-              >
-                Voir mes projets
-              </motion.a>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </section>
+      </AuroraBackground>
 
       {/* Divider */}
       <div className="divider" />
@@ -225,128 +402,47 @@ export default function Portfolio() {
               className="space-y-6 text-lg text-white/60 leading-relaxed"
             >
               <p>
-                Développeur Full Stack avec plus de 5 ans d&apos;expérience dans la création d&apos;applications web modernes et performantes.
+                En tant que Développeur Full Stack, je considère que la maîtrise
+                des technologies n’a de valeur que lorsqu’elle contribue à la
+                création d’un produit concret ou d’une solution utile. Sans
+                finalité, la technique ne reste qu’un bel exercice… dénué
+                d’élégance fonctionnelle.
               </p>
               <p>
-                Je me spécialise dans le développement d&apos;interfaces utilisateur élégantes et d&apos;architectures backend robustes, en utilisant les technologies les plus récentes.
-              </p>
-              <p>
-                Mon objectif est de transformer vos idées en solutions digitales qui dépassent vos attentes.
+                Je ne me vois pas comme un simple exécutant du développement,
+                mais comme un concepteur capable d’appréhender un écosystème
+                dans son ensemble. Diplômé en informatique et communication,
+                j’utilise ces deux dimensions pour disposer d’une vision large
+                et cohérente. Mon objectif n’est pas uniquement d’écrire du
+                code, mais d’employer la technologie pour résoudre des problèmes
+                réels, donner forme aux idées et générer de la valeur.
               </p>
             </motion.div>
           </div>
         </div>
-      </section>
-
-      {/* Divider */}
-      <div className="divider" />
-
-      {/* Projects Section - Style Portfolite */}
-      <section id="projects" className="section-spacing">
-        <div className="portfolio-container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
-          >
-            <h2 className="text-sm uppercase tracking-wider text-white/40 mb-4">
-              Projets sélectionnés
-            </h2>
-            <h3 className="text-4xl md:text-5xl font-bold">
-              Mes réalisations
-            </h3>
-          </motion.div>
-
-          <div className="space-y-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                onClick={() => setSelectedProject(project.id)}
-                className="group cursor-pointer"
-              >
-                <div className="border border-white/10 rounded-2xl p-8 md:p-10 hover:border-white/20 transition-all duration-500 hover:bg-white/5">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
-                    <div className="flex-1">
-                      <div className="flex items-baseline gap-4 mb-3">
-                        <span className="text-sm text-white/40 font-mono">
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
-                        <h4 className="text-2xl md:text-3xl font-bold group-hover:text-[#d4af37] transition-colors duration-300">
-                          {project.title}
-                        </h4>
-                      </div>
-                      <p className="text-white/60 leading-relaxed">
-                        {project.description}
-                      </p>
-                    </div>
-                    <span className="text-sm text-white/40 font-mono">
-                      {project.year}
-                    </span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 text-sm bg-white/5 border border-white/10 rounded-full text-white/60"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        <div className="divider" />
+        <div
+          style={{
+            height: "200px",
+            position: "relative",
+            overflow: "hidden",
+            marginTop: "40px",
+          }}
+        >
+          {/* Basic horizontal loop */}
+          <LogoLoop
+            logos={techLogos}
+            speed={50}
+            direction="left"
+            logoHeight={48}
+            gap={40}
+            hoverSpeed={0}
+            scaleOnHover
+            ariaLabel="Technology partners"
+          />
         </div>
+        <HeroParallax products={products} />
       </section>
-
-      {/* Divider */}
-      <div className="divider" />
-
-      {/* Skills Section - Style Portfolite */}
-      <section id="skills" className="section-spacing">
-        <div className="portfolio-container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
-          >
-            <h2 className="text-sm uppercase tracking-wider text-white/40 mb-4">
-              Compétences
-            </h2>
-            <h3 className="text-4xl md:text-5xl font-bold">
-              Technologies maîtrisées
-            </h3>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.03, duration: 0.4 }}
-                whileHover={{ scale: 1.05, borderColor: '#d4af37' }}
-                className="border border-white/10 rounded-xl p-4 text-center font-medium hover:bg-white/5 transition-all duration-300"
-              >
-                {skill}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="divider" />
 
       {/* Contact Section - Style Portfolite */}
       <section id="contact" className="section-spacing">
@@ -365,7 +461,8 @@ export default function Portfolio() {
                 Travaillons ensemble
               </h3>
               <p className="text-lg text-white/60 leading-relaxed">
-                Un projet en tête ? N&apos;hésitez pas à me contacter pour en discuter.
+                Un projet en tête ? N&apos;hésitez pas à me contacter pour en
+                discuter.
               </p>
             </motion.div>
 
@@ -386,7 +483,7 @@ export default function Portfolio() {
                 </span>
                 <span className="flex-1 h-px bg-white/10" />
                 <span className="group-hover:text-[#d4af37] transition-colors">
-                  kenji.mobutu@example.com
+                  kenjimobutu@gmail.com
                 </span>
               </motion.a>
 
@@ -426,7 +523,9 @@ export default function Portfolio() {
 
           <div className="mt-20 pt-12 border-t border-white/10">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
-              <p>© {new Date().getFullYear()} Kenji Mobutu. Tous droits réservés.</p>
+              <p>
+                © {new Date().getFullYear()} Kenji Mobutu. Tous droits réservés.
+              </p>
               <div className="flex gap-6">
                 <a href="#" className="hover:text-white/60 transition-colors">
                   Privacy
@@ -464,7 +563,9 @@ export default function Portfolio() {
                   <div className="flex items-start justify-between gap-4">
                     <div className="space-y-2">
                       <span className="text-sm text-white/40 font-mono">
-                        {String(projects.findIndex((p) => p.id === project.id) + 1).padStart(2, '0')}
+                        {String(
+                          projects.findIndex((p) => p.id === project.id) + 1
+                        ).padStart(2, "0")}
                       </span>
                       <h2 className="text-3xl md:text-4xl font-bold">
                         {project.title}
@@ -476,8 +577,18 @@ export default function Portfolio() {
                       whileHover={{ scale: 1.1 }}
                       className="text-white/40 hover:text-white transition-colors"
                     >
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      <svg
+                        className="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M6 18L18 6M6 6l12 12"
+                        />
                       </svg>
                     </motion.button>
                   </div>
@@ -498,17 +609,24 @@ export default function Portfolio() {
                   </div>
 
                   <div className="border-t border-white/10 pt-8">
-                    <h3 className="text-xl font-bold mb-4">Détails du projet</h3>
+                    <h3 className="text-xl font-bold mb-4">
+                      Détails du projet
+                    </h3>
                     <p className="text-white/60 leading-relaxed">
                       {project.details}
                     </p>
                   </div>
 
                   <div className="border-t border-white/10 pt-8">
-                    <h3 className="text-xl font-bold mb-6">Réalisations clés</h3>
+                    <h3 className="text-xl font-bold mb-6">
+                      Réalisations clés
+                    </h3>
                     <ul className="space-y-4">
                       {project.achievements.map((achievement) => (
-                        <li key={achievement} className="flex items-start gap-3">
+                        <li
+                          key={achievement}
+                          className="flex items-start gap-3"
+                        >
                           <span className="text-[#d4af37] mt-1">✓</span>
                           <span className="text-white/60">{achievement}</span>
                         </li>
@@ -521,5 +639,5 @@ export default function Portfolio() {
         </motion.div>
       )}
     </div>
-  )
+  );
 }
